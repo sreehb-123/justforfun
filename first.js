@@ -1,7 +1,7 @@
 let modeButton = document.querySelector("#mode");
 let currMode = "white";
 
-modeButton.addEventListener("mouseover",() => {
+modeButton.addEventListener("click",() => {
     if(currMode == "white"){
         currMode = "black";
         document.querySelector("body").style.backgroundColor = "black";
