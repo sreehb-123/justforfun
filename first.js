@@ -1,13 +1,29 @@
-let gameNum = 69;
-let userNum = prompt("Guess the number: ");
+let modeButton = document.querySelector("#mode");
+let currMode = "white";
 
-while(userNum!=gameNum){
-    if(userNum<gameNum){
-        userNum = prompt("Oops! You are still behind the correct number...Guess again");
+modeButton.addEventListener("click",() => {
+    if(currMode == "white"){
+        currMode = "black";
+        document.querySelector("body").style.backgroundColor = "black";
+    }
+    else if(currMode == "black"){
+        currMode = "red";
+        document.querySelector("body").style.backgroundColor = "red";
+    }
+    else if(currMode == "red"){
+        currMode = "green";
+        document.querySelector("body").style.backgroundColor = "green";
+    }
+    else if(currMode == "green"){
+        currMode = "blue";
+        document.querySelector("body").style.backgroundColor = "blue";
+    }
+    else if(currMode == "blue"){
+        currMode = "yellow";
+        document.querySelector("body").style.backgroundColor = "yellow";
     }
     else{
-        userNum = prompt("Oops! You are ahead of the correct number...Guess again");
+        currMode = "white";
+        document.querySelector("body").style.backgroundColor = "white";
     }
-}
-
-alert("CONGRATULATIONS!!");
+});
